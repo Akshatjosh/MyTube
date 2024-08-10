@@ -18,7 +18,7 @@ function VideoContainer() {
 
   return (
     <div className="flex items-center  flex-wrap">
-      {videos.map((video, index) => (
+      {videos?.map((video, index) => (
         <VideoComponent key={index} video={video} />
       ))}
     </div>

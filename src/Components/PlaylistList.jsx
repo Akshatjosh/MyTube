@@ -9,7 +9,7 @@ function PlaylistList() {
   useEffect(() => {
     const fetchPlaylists = async () => {
       const response = await fetch(
-        `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=${channelId}&maxResults=50&key=AIzaSyDbYEj0e2cr7znf6041f2bG1uHPLKRMPUA`
+        `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=${channelId}&maxResults=50&key=AIzaSyBxd27KF5gbH5bT7QD1dOlHWj5kTDA3ryo`
       );
       const json = await response.json();
       console.log(json.items);
