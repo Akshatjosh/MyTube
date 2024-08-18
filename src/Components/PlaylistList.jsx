@@ -36,9 +36,7 @@ function PlaylistList() {
 
   return (
     <div
-      className={`p-4 min-h-screen ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-100"
-      }`}
+      className={`p-4 min-h-screen ${isDarkMode ? "bg-black" : "bg-gray-100"}`}
     >
       <h1
         className={`text-3xl font-bold mb-6 text-center ${
@@ -53,7 +51,7 @@ function PlaylistList() {
             <div
               key={playlist.id}
               className={`${
-                isDarkMode ? "bg-gray-800" : "bg-white"
+                isDarkMode ? "bg-black" : "bg-white"
               } rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg`}
             >
               <img

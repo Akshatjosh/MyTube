@@ -21,7 +21,7 @@ function ButtonList() {
   return (
     <div
       className={`relative ${
-        isDarkMode ? "bg-gray-800" : "bg-gray-100"
+        isDarkMode ? "bg-black" : "bg-gray-100"
       } transition-colors duration-300`}
     >
       <div className="flex  gap-4 py-4 px-2">

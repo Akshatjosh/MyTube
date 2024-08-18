@@ -34,7 +34,7 @@ function Search_Results() {
   }, [searchQuery]);
 
   return (
-    <div className="p-4 bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <div className="p-4 bg-gray-100 dark:bg-black min-h-screen">
       <h1 className="text-3xl font-extrabold mb-6 text-center text-gray-900 dark:text-gray-100">
         Search Results for{" "}
         <span className="text-red-600 dark:text-red-400">{searchQuery}</span>
@@ -51,7 +51,7 @@ function Search_Results() {
             <Link
               to={`/Watch?v=${result.id?.videoId}`}
               key={result.id?.videoId}
-              className="group block bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
+              className="group block bg-white dark:bg-black rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
             >
               <img
                 src={result.snippet.thumbnails.medium.url}

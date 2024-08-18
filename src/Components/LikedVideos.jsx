@@ -8,7 +8,7 @@ function LikedVideos() {
   return (
     <div
       className={`flex flex-col items-center p-4 ${
-        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-100 text-gray-900 "
+        isDarkMode ? "bg-black text-gray-100" : "bg-gray-100 text-gray-900 "
       }`}
       style={{ width: "100%" }} // Adjust width to take half of WatchPage's space
     >
@@ -20,7 +20,7 @@ function LikedVideos() {
               <div
                 className={`bg-white ${
                   isDarkMode
-                    ? "dark:bg-gray-800 border-gray-700"
+                    ? "dark:bg-black border-gray-700"
                     : "border-gray-200"
                 } border rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 flex flex-col`}
               >

@@ -64,9 +64,7 @@ function WatchPage() {
       {/* Video Player */}
       <div
         className={`flex-1 rounded-lg border ${
-          isDarkMode
-            ? "border-gray-700 bg-gray-900"
-            : "border-gray-300 bg-white"
+          isDarkMode ? "border-gray-700 bg-black" : "border-gray-300 bg-white"
         } shadow-lg`}
       >
         {videoId ? (
@@ -135,9 +133,7 @@ function WatchPage() {
       {/* Liked Videos Sidebar */}
       <div
         className={`rounded-lg border ${
-          isDarkMode
-            ? "border-gray-700 bg-gray-900"
-            : "border-gray-300 bg-white"
+          isDarkMode ? "border-gray-700 bg-black" : "border-gray-300 bg-white"
         } shadow-lg w-1/3`}
       >
         <LikedVideos />

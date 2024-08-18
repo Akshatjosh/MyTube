@@ -10,13 +10,13 @@ function MainContainer() {
   return (
     <div
       className={`flex flex-col p-4 lg:p-8 min-h-screen ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-100"
+        isDarkMode ? "bg-black" : "bg-gray-100"
       } transition-colors duration-300`}
     >
       {/* Button List */}
       <div
         className={`mb-6 flex overflow-x-auto py-2 space-x-4 rounded-lg shadow-md ${
-          isDarkMode ? "bg-gray-800" : "bg-white"
+          isDarkMode ? "bg-black" : "bg-white"
         } transition-colors duration-300`}
       >
         <ButtonList />
@@ -24,7 +24,7 @@ function MainContainer() {
       {/* Video Container */}
       <div
         className={`flex-1 rounded-lg shadow-md p-4 ${
-          isDarkMode ? "bg-gray-900" : "bg-white"
+          isDarkMode ? "bg-black" : "bg-white"
         } transition-colors duration-300`}
       >
         <VideoContainer />

@@ -28,7 +28,7 @@ function Sidebar() {
         <div
           className={`fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] overflow-y-auto z-20 transition-transform transform ease-in-out duration-300 ${
             isDarkMode
-              ? "bg-gray-800 text-white shadow-md"
+              ? "bg-black text-white shadow-md"
               : "bg-gray-100 text-gray-800 shadow-md"
           }`}
         >

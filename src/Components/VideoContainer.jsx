@@ -29,7 +29,7 @@ function VideoContainer() {
   return (
     <div
       className={`p-4 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-100"
+        isDarkMode ? "bg-black" : "bg-gray-100"
       } transition-colors duration-300`}
     >
       <h2

@@ -33,7 +33,7 @@ function VideoComponent({ video }) {
     <div
       className={`w-72 h-62 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl rounded-lg overflow-hidden shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ${
         isDarkMode
-          ? "bg-gray-800 text-gray-100 border-gray-600"
+          ? "bg-black text-gray-100 border-gray-600"
           : "bg-white text-gray-900"
       }`}
     >
