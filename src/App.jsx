@@ -1,43 +1,70 @@
 import { Provider } from "react-redux";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Header from "./Components/Header";
 import store from "./utils/store";
+import Header from "./Components/Header";
 import Body from "./Components/Body";
-import WatchPage from "./Components/WatchPage";
-import MainContainer from "./Components/MainContainer";
-import PlaylistList from "./Components/PlaylistList";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect, useRef, Suspense, lazy } from "react";
 import LoadingBar from "react-top-loading-bar";
-import { useEffect, useRef } from "react";
-import Search_Results from "./Components/Search_Results";
-import LikedVideos from "./Components/LikedVideos";
+import "./App.css";
+
+// Lazy load components to split code and improve performance
+const MainContainer = lazy(() => import("./Components/MainContainer"));
+const WatchPage = lazy(() => import("./Components/WatchPage"));
+const PlaylistList = lazy(() => import("./Components/PlaylistList"));
+const SearchResults = lazy(() => import("./Components/Search_Results")); // Correct name here
+const LikedVideos = lazy(() => import("./Components/LikedVideos"));
+
 function App() {
   const location = useLocation();
-  const ref = useRef(0);
+  const ref = useRef(null);
+
   useEffect(() => {
-    ref.current.continuousStart();
-    const timer = setTimeout(() => {
-      ref.current.complete();
-    }, 2000);
-    return () => clearTimeout(timer);
+    if (ref.current) {
+      ref.current.continuousStart();
+      const timer = setTimeout(() => {
+        ref.current.complete();
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
   }, [location.pathname]);
+
   return (
-    <>
-      <LoadingBar style={{ color: "#ff0000" }} ref={ref} />
-      <Provider store={store}>
-        <div className="select-none">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Body />}>
-              <Route index element={<MainContainer />} />
-              <Route path="/watch" element={<WatchPage />} />
-              <Route path="/Playlist" element={<PlaylistList />} />
-              <Route path="/search-results" element={<Search_Results />} />
-              <Route path="/liked-videos" element={<LikedVideos />} />
-            </Route>
-          </Routes>
+    <Provider store={store}>
+      <div className="app-container">
+        <LoadingBar
+          color="#ff4500"
+          height={4}
+          ref={ref}
+          transitionTime={300}
+          shadow={true}
+          className="rounded-lg"
+        />
+        <Header />
+        <div className="main-content">
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center h-screen">
+                <div className="loader"></div>
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<Body />}>
+                <Route index element={<MainContainer />} />
+                <Route path="/watch" element={<WatchPage />} />
+                <Route path="/playlist" element={<PlaylistList />} />
+                <Route
+                  path="/search-results"
+                  element={<SearchResults />}
+                />{" "}
+                {/* Corrected name here */}
+                <Route path="/liked-videos" element={<LikedVideos />} />
+              </Route>
+            </Routes>
+          </Suspense>
         </div>
-      </Provider>
-    </>
+      </div>
+    </Provider>
   );
 }
 

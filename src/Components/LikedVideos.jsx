@@ -3,27 +3,47 @@ import { Link } from "react-router-dom";
 
 function LikedVideos() {
   const likedVideos = useSelector((state) => state.likedVideos);
+  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode);
 
   return (
-    <div className=" flex items-center justify-center  flex-col h-full">
-      <h1 className="text-2xl font-bold">Liked Videos</h1>
+    <div
+      className={`flex flex-col items-center p-4 ${
+        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-100 text-gray-900 "
+      }`}
+      style={{ width: "100%" }} // Adjust width to take half of WatchPage's space
+    >
+      <h1 className="text-3xl font-bold mb-6">Liked Videos</h1>
       {likedVideos.length > 0 ? (
-        <ul className="mt-4 flex justify-center flex-col items-center gap-4">
+        <div className="flex flex-col gap-6 w-full">
           {likedVideos.map((video, index) => (
-            <Link to={`/Watch?v=${video.id}`} key={index}>
-              <li className="p-2 border rounded">
+            <Link to={`/Watch?v=${video.id}`} key={index} className="w-full">
+              <div
+                className={`bg-white ${
+                  isDarkMode
+                    ? "dark:bg-gray-800 border-gray-700"
+                    : "border-gray-200"
+                } border rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 flex flex-col`}
+              >
                 <img
                   src={video.thumbnails?.medium?.url}
                   alt={video.title}
-                  className="w-full h-auto rounded-md"
+                  className="w-full h-40 object-cover"
                 />
-                <h3 className="mt-2 text-lg font-semibold">{video.title}</h3>
-              </li>
+                <div className="p-4">
+                  <h3
+                    className={`text-lg font-semibold ${
+                      isDarkMode ? "text-gray-300" : "text-gray-800"
+                    }`}
+                  >
+                    {video.title}
+                  </h3>
+                </div>
+              </div>
             </Link>
           ))}
-        </ul>
+        </div>
       ) : (
-        <p className="text-2xl font-semibold">No Liked Videos</p>
+        <p className="text-xl font-semibold">No Liked Videos</p>
       )}
     </div>
   );

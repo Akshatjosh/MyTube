@@ -1,142 +1,170 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import {
+  FaHome,
+  FaVideo,
+  FaHistory,
+  FaPlayCircle,
+  FaClock,
+  FaThumbsUp,
+  FaStar,
+  FaMusic,
+  FaFilm,
+  FaGamepad,
+  FaShoppingCart,
+  FaNewspaper,
+  FaGlobe,
+  FaTshirt,
+  FaPodcast,
+} from "react-icons/fa";
 
 function Sidebar() {
-  const isMenuOpen = useSelector((store) => store.app?.isMenuOpen);
+  const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
+  const isDarkMode = useSelector((store) => store.darkMode.isDarkMode);
 
   return (
     <>
       {isMenuOpen && (
-        <div className=" shadow-lg fixed top-16 left-0 w-48 h-[calc(100vh-4rem)] bg-[#FFFFFF] rounded-xl text-black overflow-y-auto z-20">
+        <div
+          className={`fixed top-16 left-0 w-64 h-[calc(100vh-4rem)] overflow-y-auto z-20 transition-transform transform ease-in-out duration-300 ${
+            isDarkMode
+              ? "bg-gray-800 text-white shadow-md"
+              : "bg-gray-100 text-gray-800 shadow-md"
+          }`}
+        >
           <div className="flex flex-col items-start p-4 gap-4">
-            <nav className="flex flex-col gap-2 w-full">
+            <nav className="flex flex-col gap-3 w-full">
               <Link
                 to="/"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Home
+                <FaHome className="mr-3" /> Home
               </Link>
               <Link
                 to="/shorts"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Shorts
+                <FaVideo className="mr-3" /> Shorts
               </Link>
               <Link
                 to="/subscriptions"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Subscriptions
+                <FaStar className="mr-3" /> Subscriptions
               </Link>
             </nav>
-            <hr className="w-full border-2 border-zinc-100" />
+
+            <hr className="w-full border-t my-4" />
+
             <h1 className="text-lg font-semibold">You</h1>
-            <nav className="flex flex-col gap-2 w-full">
+            <nav className="flex flex-col gap-3 w-full">
               <Link
                 to="/your-channel"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Your Channel
+                <FaPlayCircle className="mr-3" /> Your Channel
               </Link>
               <Link
                 to="/history"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                History
+                <FaHistory className="mr-3" /> History
               </Link>
               <Link
-                to="/Playlists"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                to="/playlists"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                PlayLists
+                <FaClock className="mr-3" /> Playlists
               </Link>
               <Link
                 to="/your-videos"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Your Videos
+                <FaVideo className="mr-3" /> Your Videos
               </Link>
               <Link
                 to="/watch-later"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Watch Later
+                <FaClock className="mr-3" /> Watch Later
               </Link>
               <Link
                 to="/liked-videos"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Liked Videos
+                <FaThumbsUp className="mr-3" /> Liked Videos
               </Link>
             </nav>
-            <hr className="w-full border-2 border-zinc-100" />
+
+            <hr className="w-full border-t my-4" />
+
             <h1 className="text-lg font-semibold">Explore</h1>
-            <nav className="flex flex-col gap-2 w-full">
+            <nav className="flex flex-col gap-3 w-full">
               <Link
                 to="/trending"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Trending
+                <FaGlobe className="mr-3" /> Trending
               </Link>
               <Link
                 to="/shopping"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Shopping
+                <FaShoppingCart className="mr-3" /> Shopping
               </Link>
               <Link
                 to="/music"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Music
+                <FaMusic className="mr-3" /> Music
               </Link>
               <Link
                 to="/films"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Films
+                <FaFilm className="mr-3" /> Films
               </Link>
               <Link
                 to="/live"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Live
+                <FaVideo className="mr-3" /> Live
               </Link>
               <Link
                 to="/gaming"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Gaming
+                <FaGamepad className="mr-3" /> Gaming
               </Link>
               <Link
                 to="/news"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                News
+                <FaNewspaper className="mr-3" /> News
               </Link>
               <Link
                 to="/sports"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Sports
+                <FaStar className="mr-3" /> Sports
               </Link>
               <Link
                 to="/courses"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Courses
+                <FaClock className="mr-3" /> Courses
               </Link>
               <Link
                 to="/fashion"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Fashion
+                <FaTshirt className="mr-3" /> Fashion
               </Link>
               <Link
                 to="/podcasts"
-                className="font-semibold hover:text-black hover:bg-zinc-400 p-2 rounded"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
               >
-                Podcasts
+                <FaPodcast className="mr-3" /> Podcasts
               </Link>
             </nav>
           </div>
