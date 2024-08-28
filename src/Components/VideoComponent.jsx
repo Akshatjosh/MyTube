@@ -44,9 +44,7 @@ function VideoComponent({ video }) {
           alt={video.snippet.title}
         />
         <div className="p-4">
-          <h1 className="text-sm md:text-base font-semibold truncate">
-            {video.snippet.title}
-          </h1>
+          <h1 className="text-base   ">{video.snippet.title}</h1>
           <div className="flex items-center gap-2 mt-2">
             <VscAccount className="text-gray-600" />
             <h3

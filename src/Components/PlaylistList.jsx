@@ -36,18 +36,18 @@ function PlaylistList() {
 
   return (
     <div
-      className={`mt-8 flex flex-col items-center p-4 ${
+      className={`mt-16 flex flex-col items-center p-4 ${
         isDarkMode ? "bg-black" : "bg-white"
       } min-h-screen transition-colors duration-300`}
     >
       <h1
         className={`text-3xl font-bold mb-6 ${
-          isDarkMode ? "text-black" : "text-white"
+          isDarkMode ? "text-white" : "text-black"
         }`}
       >
         Playlists
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+      <div className="ml-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
         {playlists.length > 0 ? (
           playlists.map((playlist) => (
             <div
@@ -59,7 +59,7 @@ function PlaylistList() {
               <img
                 src={playlist.snippet.thumbnails.high.url}
                 alt={playlist.snippet.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-32 object-cover"
               />
               <div className="p-4">
                 <h2 className="text-lg font-semibold truncate">
