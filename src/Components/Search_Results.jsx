@@ -1,5 +1,6 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function Search_Results() {
   const [searchParams] = useSearchParams();
@@ -7,6 +8,7 @@ function Search_Results() {
   const [isLoading, setIsLoading] = useState(true);
 
   const searchQuery = searchParams.get("query") || "";
+  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode);
 
   useEffect(() => {
     const fetchSearchResults = async () => {
@@ -35,31 +37,26 @@ function Search_Results() {
 
   return (
     <div
-      className={`mt-8 ml-8 flex flex-col items-center p-4 ${
-        searchResults.length === 0 ? "bg-gray-200" : "bg-gray-100"
-      } min-h-screen transition-colors duration-300`}
+      className={`flex flex-col items-center p-4 min-h-screen transition-colors duration-300 ${
+        isDarkMode ? "bg-black text-white" : "bg-white text-black"
+      }`}
     >
-      <h1
-        className={`mt-2 text-2xl md:text-3xl font-extrabold mb-6 text-center ${
-          searchResults.length === 0 ? "text-black" : "text-black"
-        } dark:text-black`}
-      >
-        Search Results for{" "}
-        <span className="text-red-600 dark:text-red-400">{searchQuery}</span>
+      <h1 className="text-2xl md:text-3xl font-extrabold mb-6 text-center">
+        Search Results for <span className="text-red-600">{searchQuery}</span>
       </h1>
       {isLoading ? (
         <div className="flex justify-center items-center w-full h-64">
-          <p className="text-lg font-semibold text-black dark:text-white">
-            Loading...
-          </p>
+          <p className="text-lg font-semibold">Loading...</p>
         </div>
       ) : searchResults.length > 0 ? (
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
           {searchResults.map((result) => (
             <Link
               to={`/Watch?v=${result.id?.videoId}`}
               key={result.id?.videoId}
-              className="group w-42 block bg-white dark:bg-black rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg"
+              className={`block rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg ${
+                isDarkMode ? "bg-black text-white" : "bg-white text-black"
+              }`}
             >
               <img
                 src={result.snippet.thumbnails.medium.url}
@@ -67,21 +64,17 @@ function Search_Results() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-md md:text-lg font-semibold text-black dark:text-white ">
+                <h3 className="text-lg font-semibold">
                   {result.snippet.title}
                 </h3>
-                <p className="text-sm text-black dark:text-white ">
-                  {result.snippet.description}
-                </p>
+                <p className="text-sm">{result.snippet.description}</p>
               </div>
             </Link>
           ))}
         </div>
       ) : (
         <div className="flex justify-center items-center w-full h-64">
-          <p className="text-lg font-semibold text-black dark:text-white">
-            No Results Found
-          </p>
+          <p className="text-lg font-semibold">No Results Found</p>
         </div>
       )}
     </div>
