@@ -8,7 +8,7 @@ function LikedVideos() {
   return (
     <div
       className={`flex flex-col p-4 ${
-        isDarkMode ? "bg-black text-gray-100" : "bg-gray-100 text-gray-900"
+        isDarkMode ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       <h1 className="text-2xl font-bold mb-4">Liked Videos</h1>
@@ -19,7 +19,7 @@ function LikedVideos() {
               <div
                 className={`border rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 flex flex-col ${
                   isDarkMode
-                    ? "bg-gray-800 border-gray-700"
+                    ? "bg-black border-gray-700"
                     : "bg-white border-gray-200"
                 }`}
               >

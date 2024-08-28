@@ -33,8 +33,8 @@ function VideoComponent({ video }) {
     <div
       className={`w-72  rounded-lg overflow-hidden shadow-md border transition-transform transform hover:scale-105 ${
         isDarkMode
-          ? "bg-gray-800 text-gray-100 border-gray-600"
-          : "bg-white text-gray-900 border-gray-300"
+          ? "bg-black text-white border-gray-600"
+          : "bg-white text-black border-gray-300"
       }`}
     >
       <Link to={`/Watch?v=${video?.id}`}>

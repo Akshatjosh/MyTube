@@ -8,14 +8,14 @@ function MainContainer() {
   return (
     <div
       className={`flex flex-col p-2 sm:p-4 lg:p-6 min-h-screen ${
-        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+        isDarkMode ? "bg-black text-white" : "bg-white text-black"
       } transition-colors duration-300`}
       style={{ overflow: "hidden" }} // Prevent scrolling on MainContainer
     >
       {/* Button List */}
       <div
         className={`flex overflow-x-auto py-2 space-x-2 sm:space-x-4 rounded-lg shadow-md ${
-          isDarkMode ? "bg-gray-800" : "bg-white"
+          isDarkMode ? "bg-black" : "bg-white"
         } transition-colors duration-300 scrollbar-hide`}
       >
         <ButtonList />
@@ -24,7 +24,7 @@ function MainContainer() {
       {/* Video Container */}
       <div
         className={`flex-1 mt-2 sm:mt-4 rounded-lg shadow-md p-2 sm:p-4 ${
-          isDarkMode ? "bg-gray-800" : "bg-white"
+          isDarkMode ? "bg-black" : "bg-white"
         } transition-colors duration-300 flex flex-col items-start`}
       >
         <VideoContainer />

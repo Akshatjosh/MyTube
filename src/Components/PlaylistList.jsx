@@ -37,12 +37,12 @@ function PlaylistList() {
   return (
     <div
       className={`mt-8 flex flex-col items-center p-4 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-100"
+        isDarkMode ? "bg-black" : "bg-white"
       } min-h-screen transition-colors duration-300`}
     >
       <h1
         className={`text-3xl font-bold mb-6 ${
-          isDarkMode ? "text-gray-100" : "text-gray-900"
+          isDarkMode ? "text-black" : "text-white"
         }`}
       >
         Playlists
@@ -53,9 +53,7 @@ function PlaylistList() {
             <div
               key={playlist.id}
               className={`rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl ${
-                isDarkMode
-                  ? "bg-gray-800 text-gray-100"
-                  : "bg-white text-gray-900"
+                isDarkMode ? "bg-black text-white" : "bg-white text-black"
               }`}
             >
               <img

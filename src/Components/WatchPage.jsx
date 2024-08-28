@@ -58,7 +58,7 @@ function WatchPage() {
   return (
     <div
       className={` mt-8 flex flex-col lg:flex-row gap-8 p-4 ${
-        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-100 text-gray-900"
+        isDarkMode ? "bg-black text-white" : "bg-white text-black"
       } transition-colors duration-300`}
     >
       {/* Video Player */}
@@ -83,11 +83,13 @@ function WatchPage() {
                   allowFullScreen
                 ></iframe>
                 <div className="p-4">
-                  <h1 className="text-xl font-bold mb-2">{video?.title}</h1>
+                  <h1 className="ml-4 text-lg sm:text-sm text-xl font-bold mb-2">
+                    {video?.title}
+                  </h1>
                   <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
                     <div className="flex items-center gap-2">
                       <VscAccount className="text-xl" />
-                      <h3 className="text-lg font-semibold hover:underline cursor-pointer">
+                      <h3 className="ml-4 text-lg sm:text-sm font-semibold hover:underline cursor-pointer">
                         {video?.channelTitle}
                       </h3>
                     </div>
@@ -100,7 +102,7 @@ function WatchPage() {
                         } transition-transform transform hover:scale-105`}
                         onClick={handleClick}
                       >
-                        {subscribe ? "Subscribed" : "Subscribe"}
+                        {subscribe ? "Subscribe" : "Subscribed"}
                       </button>
                       <button
                         className={`px-4 py-2 font-medium rounded-full ${
@@ -132,7 +134,7 @@ function WatchPage() {
       {/* Liked Videos Sidebar */}
       <div
         className={`rounded-lg border ${
-          isDarkMode ? "border-gray-700 bg-black" : "border-gray-300 bg-white"
+          isDarkMode ? " bg-black" : " bg-white"
         } shadow-lg w-full lg:w-1/3`}
       >
         <LikedVideos />

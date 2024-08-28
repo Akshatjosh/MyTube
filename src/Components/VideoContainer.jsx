@@ -29,12 +29,12 @@ function VideoContainer() {
   return (
     <div
       className={`ml-8 p-2 md:p-4 ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-100"
+        isDarkMode ? "bg-black" : "bg-white"
       } transition-colors duration-300`}
     >
       <h2
         className={`text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 ${
-          isDarkMode ? "text-gray-100" : "text-gray-900"
+          isDarkMode ? "text-white" : "text-black"
         }`}
       >
         Popular Videos

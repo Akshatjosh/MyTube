@@ -16,7 +16,7 @@ function Body() {
   return (
     <div
       className={`flex ${
-        isDarkMode ? "bg-gray-900" : "bg-gray-100"
+        isDarkMode ? "bg-black" : "bg-white"
       } transition-colors duration-300`}
       style={{ overflow: "hidden" }} // Prevent scrolling on the Body
     >
@@ -25,16 +25,16 @@ function Body() {
         className={`fixed top-0 left-0 h-full ${
           isSidebarOpen ? "w-64" : "w-16"
         } ${
-          isDarkMode ? "bg-gray-900" : "bg-white"
+          isDarkMode ? "bg-black" : "bg-white"
         } text-white dark:text-gray-200 transition-width duration-300 ease-in-out flex flex-col z-40`}
       >
         <button
           onClick={toggleSidebar}
           className={`p-2 ${
             isDarkMode
-              ? "bg-gray-700 hover:bg-gray-600"
-              : "bg-gray-100 hover:bg-gray-200"
-          } text-white dark:text-gray-100 focus:outline-none transition-colors duration-300`}
+              ? "bg-black hover:bg-gray-600 text-gray-100"
+              : "bg-white hover:bg-gray-200"
+          } text-white  focus:outline-none transition-colors duration-300`}
         >
           <FiMenu size={20} />
         </button>
@@ -46,7 +46,7 @@ function Body() {
         className={`flex-1 mt-8 ml-0 md:ml-${
           isSidebarOpen ? "64" : "16"
         } p-2 md:p-4 lg:p-6 ${
-          isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+          isDarkMode ? "bg-black text-white" : "bg-white text-black"
         } transition-colors duration-300`}
         style={{ overflow: "hidden" }} // Prevent scrolling on the MainContainer
       >

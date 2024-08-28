@@ -49,7 +49,7 @@ function Search_Results() {
       </h1>
       {isLoading ? (
         <div className="flex justify-center items-center w-full h-64">
-          <p className="text-lg font-semibold text-gray-600 dark:text-gray-300">
+          <p className="text-lg font-semibold text-black dark:text-white">
             Loading...
           </p>
         </div>
@@ -59,7 +59,7 @@ function Search_Results() {
             <Link
               to={`/Watch?v=${result.id?.videoId}`}
               key={result.id?.videoId}
-              className="group block bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg"
+              className="group block bg-white dark:bg-black rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg"
             >
               <img
                 src={result.snippet.thumbnails.medium.url}
@@ -67,10 +67,10 @@ function Search_Results() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-md md:text-lg font-semibold text-gray-800 dark:text-gray-100 truncate">
+                <h3 className="text-md md:text-lg font-semibold text-black dark:text-white truncate">
                   {result.snippet.title}
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 truncate">
+                <p className="text-sm text-black dark:text-white truncate">
                   {result.snippet.description}
                 </p>
               </div>
@@ -79,7 +79,7 @@ function Search_Results() {
         </div>
       ) : (
         <div className="flex justify-center items-center w-full h-64">
-          <p className="text-lg font-semibold text-gray-600 dark:text-gray-300">
+          <p className="text-lg font-semibold text-black dark:text-white">
             No Results Found
           </p>
         </div>

@@ -67,7 +67,7 @@ function Header() {
   return (
     <div
       className={`fixed top-0 left-0 w-full p-4 shadow-md z-50 transition-colors duration-300 ${
-        isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+        isDarkMode ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between flex-wrap">
@@ -89,8 +89,8 @@ function Header() {
               placeholder="Search"
               className={`w-full h-12 pl-4 pr-16 text-black border rounded-full focus:ring-2 focus:outline-none transition duration-200 ${
                 isDarkMode
-                  ? "bg-gray-800 text-white border-gray-700 focus:border-gray-500 focus:ring-gray-600"
-                  : "bg-gray-100 border-gray-300 focus:border-gray-500 focus:ring-gray-200"
+                  ? "bg-black text-white border-gray-700 focus:border-gray-500 focus:ring-gray-600"
+                  : "bg-white text-black border-gray-300 focus:border-gray-500 focus:ring-gray-200"
               }`}
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setShowSuggestion(true)}
@@ -99,8 +99,8 @@ function Header() {
             <button
               className={`absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-300 ${
                 isDarkMode
-                  ? "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                  ? "bg-black text-white hover:bg-gray-600"
+                  : "bg-white text-black hover:bg-gray-300"
               }`}
               onClick={handleSearch}
             >
@@ -110,7 +110,7 @@ function Header() {
           {showSuggestion && suggestions.length > 0 && (
             <div
               className={`absolute top-full mt-2 w-full rounded-lg shadow-lg z-10 transition-all duration-300 ${
-                isDarkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
+                isDarkMode ? "bg-black text-white" : "bg-white text-black"
               }`}
             >
               <ul className="max-h-60 overflow-y-auto rounded-lg">
@@ -136,8 +136,8 @@ function Header() {
             onClick={toggleDarkModeHandler}
             className={`p-2 rounded-full transition-colors duration-300 flex items-center justify-center ${
               isDarkMode
-                ? "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                : "bg-gray-200 text-black hover:bg-gray-300"
+                ? "bg-black text-white hover:bg-gray-700"
+                : "bg-white text-black hover:bg-gray-300"
             }`}
           >
             {isDarkMode ? <MdLightMode size={24} /> : <MdDarkMode size={24} />}

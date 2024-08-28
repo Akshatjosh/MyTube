@@ -1,4 +1,4 @@
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import store from "./utils/store";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -30,41 +30,53 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="app-container">
-        <LoadingBar
-          color="#ff4500"
-          height={4}
-          ref={ref}
-          transitionTime={300}
-          shadow={true}
-          className="rounded-lg"
-        />
-        <Header />
-        <div className="main-content">
-          <Suspense
-            fallback={
-              <div className="flex items-center justify-center h-screen">
-                <div className="loader"></div>
-              </div>
-            }
-          >
-            <Routes>
-              <Route path="/" element={<Body />}>
-                <Route index element={<MainContainer />} />
-                <Route path="/watch" element={<WatchPage />} />
-                <Route path="/playlist" element={<PlaylistList />} />
-                <Route
-                  path="/search-results"
-                  element={<SearchResults />}
-                />{" "}
-                {/* Corrected name here */}
-                <Route path="/liked-videos" element={<LikedVideos />} />
-              </Route>
-            </Routes>
-          </Suspense>
-        </div>
-      </div>
+      <AppContent ref={ref} />
     </Provider>
+  );
+}
+
+function AppContent({ ref }) {
+  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode);
+
+  return (
+    <div
+      className={`app-container ${
+        isDarkMode ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
+      <LoadingBar
+        color="#ff4500"
+        height={4}
+        ref={ref}
+        transitionTime={300}
+        shadow={true}
+        className="rounded-lg"
+      />
+      <Header />
+      <div
+        className={`main-content ${
+          isDarkMode ? "bg-black text-white" : "bg-white text-black"
+        }`}
+      >
+        <Suspense
+          fallback={
+            <div className="flex items-center justify-center h-screen">
+              <div className="loader"></div>
+            </div>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Body />}>
+              <Route index element={<MainContainer />} />
+              <Route path="/watch" element={<WatchPage />} />
+              <Route path="/playlist" element={<PlaylistList />} />
+              <Route path="/search-results" element={<SearchResults />} />
+              <Route path="/liked-videos" element={<LikedVideos />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      </div>
+    </div>
   );
 }
 
