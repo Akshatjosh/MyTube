@@ -57,7 +57,7 @@ function WatchPage() {
 
   return (
     <div
-      className={` mt-8 flex flex-col lg:flex-row gap-8 p-4 ${
+      className={`min-h-screen mt-8 ml-4 flex flex-col lg:flex-row gap-8 p-4 ${
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
       } transition-colors duration-300`}
     >
@@ -133,7 +133,7 @@ function WatchPage() {
       </div>
       {/* Liked Videos Sidebar */}
       <div
-        className={`rounded-lg border ${
+        className={`ml-4 rounded-lg border ${
           isDarkMode ? " bg-black" : " bg-white"
         } shadow-lg w-full lg:w-1/3`}
       >
