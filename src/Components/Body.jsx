@@ -15,9 +15,10 @@ function Body() {
 
   return (
     <div
-      className={`overflow-hidden flex ${
+      className={`flex ${
         isDarkMode ? "bg-gray-900" : "bg-gray-100"
       } transition-colors duration-300`}
+      style={{ overflow: "hidden" }} // Prevent scrolling on the Body
     >
       {/* Sidebar */}
       <div
@@ -47,6 +48,7 @@ function Body() {
         } p-2 md:p-4 lg:p-6 ${
           isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
         } transition-colors duration-300`}
+        style={{ overflow: "hidden" }} // Prevent scrolling on the MainContainer
       >
         <Outlet />
       </div>

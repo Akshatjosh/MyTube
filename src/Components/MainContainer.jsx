@@ -10,10 +10,11 @@ function MainContainer() {
       className={`flex flex-col p-2 sm:p-4 lg:p-6 min-h-screen ${
         isDarkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
       } transition-colors duration-300`}
+      style={{ overflow: "hidden" }} // Prevent scrolling on MainContainer
     >
       {/* Button List */}
       <div
-        className={`flex  py-2 space-x-2 sm:space-x-4 rounded-lg shadow-md ${
+        className={`flex overflow-x-auto py-2 space-x-2 sm:space-x-4 rounded-lg shadow-md ${
           isDarkMode ? "bg-gray-800" : "bg-white"
         } transition-colors duration-300 scrollbar-hide`}
       >

@@ -31,7 +31,7 @@ function VideoComponent({ video }) {
 
   return (
     <div
-      className={`w-72 h-82  rounded-lg overflow-hidden shadow-md border transition-transform transform hover:scale-105 ${
+      className={`w-72  rounded-lg overflow-hidden shadow-md border transition-transform transform hover:scale-105 ${
         isDarkMode
           ? "bg-gray-800 text-gray-100 border-gray-600"
           : "bg-white text-gray-900 border-gray-300"

@@ -44,18 +44,16 @@ function VideoContainer() {
           <p className="text-xl font-semibold">Loading...</p>
         </div>
       ) : (
-        <div className="mx-auto">
-          <div className="flex items-center flex-wrap gap-4 ">
-            {videos.length > 0 ? (
-              videos.map((video) => (
-                <VideoComponent key={video.id} video={video} />
-              ))
-            ) : (
-              <div className="col-span-full flex justify-center items-center h-64">
-                <p className="text-xl font-semibold">No videos found</p>
-              </div>
-            )}
-          </div>
+        <div className="flex flex-wrap gap-16">
+          {videos.length > 0 ? (
+            videos.map((video) => (
+              <VideoComponent key={video.id} video={video} />
+            ))
+          ) : (
+            <div className="flex justify-center items-center h-64">
+              <p className="text-xl font-semibold">No videos found</p>
+            </div>
+          )}
         </div>
       )}
     </div>
