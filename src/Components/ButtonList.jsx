@@ -25,7 +25,7 @@ function ButtonList() {
       } transition-colors duration-300 py-4 px-2`}
     >
       <div
-        className={`flex overflow-x-auto space-x-4 py-2 px-4 ${
+        className={`ml-4 flex overflow-x-auto space-x-4 py-2 px-4 ${
           isDarkMode
             ? "scrollbar-thin scrollbar-thumb-gray-500 hover:scrollbar-thumb-gray-700 scrollbar-track-gray-700"
             : "scrollbar-thin scrollbar-thumb-gray-300 hover:scrollbar-thumb-gray-500 scrollbar-track-gray-100"
