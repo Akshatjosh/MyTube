@@ -28,12 +28,12 @@ function VideoContainer() {
 
   return (
     <div
-      className={`p-4 ${
+      className={`ml-8 p-2 md:p-4 ${
         isDarkMode ? "bg-gray-900" : "bg-gray-100"
       } transition-colors duration-300`}
     >
       <h2
-        className={`text-2xl md:text-3xl font-bold mb-6 ${
+        className={`text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6 ${
           isDarkMode ? "text-gray-100" : "text-gray-900"
         }`}
       >
@@ -44,8 +44,8 @@ function VideoContainer() {
           <p className="text-xl font-semibold">Loading...</p>
         </div>
       ) : (
-        <div className="max-w-full mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="mx-auto">
+          <div className="flex items-center flex-wrap gap-4 ">
             {videos.length > 0 ? (
               videos.map((video) => (
                 <VideoComponent key={video.id} video={video} />

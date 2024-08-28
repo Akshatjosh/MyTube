@@ -35,14 +35,14 @@ function Search_Results() {
 
   return (
     <div
-      className={`flex flex-col items-center p-4 ${
+      className={`mt-8 flex flex-col items-center p-4 ${
         searchResults.length === 0 ? "bg-gray-200" : "bg-gray-100"
       } min-h-screen transition-colors duration-300`}
     >
       <h1
-        className={`text-2xl md:text-3xl font-extrabold mb-6 text-center ${
-          searchResults.length === 0 ? "text-gray-700" : "text-gray-900"
-        } dark:text-gray-100`}
+        className={`mt-2 text-2xl md:text-3xl font-extrabold mb-6 text-center ${
+          searchResults.length === 0 ? "text-black" : "text-black"
+        } dark:text-black`}
       >
         Search Results for{" "}
         <span className="text-red-600 dark:text-red-400">{searchQuery}</span>
@@ -54,7 +54,7 @@ function Search_Results() {
           </p>
         </div>
       ) : searchResults.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
           {searchResults.map((result) => (
             <Link
               to={`/Watch?v=${result.id?.videoId}`}

@@ -15,7 +15,7 @@ function Body() {
 
   return (
     <div
-      className={`flex ${
+      className={`overflow-hidden flex ${
         isDarkMode ? "bg-gray-900" : "bg-gray-100"
       } transition-colors duration-300`}
     >
@@ -29,22 +29,22 @@ function Body() {
       >
         <button
           onClick={toggleSidebar}
-          className={`p-4 ${
+          className={`p-2 ${
             isDarkMode
               ? "bg-gray-700 hover:bg-gray-600"
               : "bg-gray-100 hover:bg-gray-200"
           } text-white dark:text-gray-100 focus:outline-none transition-colors duration-300`}
         >
-          <FiMenu size={24} />
+          <FiMenu size={20} />
         </button>
         <Sidebar isSidebarOpen={isSidebarOpen} />
       </div>
 
       {/* Main Content */}
       <div
-        className={`flex-1 ml-${
+        className={`flex-1 mt-8 ml-0 md:ml-${
           isSidebarOpen ? "64" : "16"
-        } p-4 md:p-6 lg:p-8 ${
+        } p-2 md:p-4 lg:p-6 ${
           isDarkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
         } transition-colors duration-300`}
       >

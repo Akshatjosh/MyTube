@@ -31,7 +31,7 @@ function VideoComponent({ video }) {
 
   return (
     <div
-      className={`w-full rounded-lg overflow-hidden shadow-md border transition-transform transform hover:scale-105 ${
+      className={`w-72 h-82  rounded-lg overflow-hidden shadow-md border transition-transform transform hover:scale-105 ${
         isDarkMode
           ? "bg-gray-800 text-gray-100 border-gray-600"
           : "bg-white text-gray-900 border-gray-300"
@@ -40,24 +40,24 @@ function VideoComponent({ video }) {
       <Link to={`/Watch?v=${video?.id}`}>
         <img
           src={video.snippet.thumbnails.high.url}
-          className="w-full h-48 object-cover"
+          className="w-full h-48 md:h-56 lg:h-64 object-cover"
           alt={video.snippet.title}
         />
         <div className="p-4">
-          <h1 className="text-base font-semibold truncate">
+          <h1 className="text-sm md:text-base font-semibold truncate">
             {video.snippet.title}
           </h1>
           <div className="flex items-center gap-2 mt-2">
             <VscAccount className="text-gray-600" />
             <h3
-              className={`text-sm font-medium ${
+              className={`text-sm md:text-base font-medium ${
                 isDarkMode ? "text-gray-300" : "text-gray-800"
               }`}
             >
               {video.snippet.channelTitle}
             </h3>
           </div>
-          <p className="mt-2 text-sm">
+          <p className="mt-2 text-sm md:text-base">
             <span className="mr-4">
               {formatViewCount(video.statistics.viewCount)} views
             </span>

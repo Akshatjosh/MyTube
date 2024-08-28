@@ -1,5 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState, useEffect } from "react"; // Import useState and useEffect
 
 function PlaylistList() {
   const [searchParams] = useSearchParams();
@@ -35,7 +36,7 @@ function PlaylistList() {
 
   return (
     <div
-      className={`flex flex-col items-center p-4 ${
+      className={`mt-8 flex flex-col items-center p-4 ${
         isDarkMode ? "bg-gray-900" : "bg-gray-100"
       } min-h-screen transition-colors duration-300`}
     >

@@ -57,7 +57,7 @@ function WatchPage() {
 
   return (
     <div
-      className={`flex flex-col lg:flex-row gap-8 p-4 ${
+      className={` mt-8 flex flex-col lg:flex-row gap-8 p-4 ${
         isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-100 text-gray-900"
       } transition-colors duration-300`}
     >
