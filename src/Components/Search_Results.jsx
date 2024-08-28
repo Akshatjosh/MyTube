@@ -13,7 +13,7 @@ function Search_Results() {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${searchQuery}&key=YOUR_API_KEY`
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${searchQuery}&key=AIzaSyBxd27KF5gbH5bT7QD1dOlHWj5kTDA3ryo`
         );
         const data = await response.json();
         setSearchResults(data.items || []);
