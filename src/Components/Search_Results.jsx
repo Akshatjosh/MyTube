@@ -35,7 +35,7 @@ function Search_Results() {
 
   return (
     <div
-      className={`mt-8 flex flex-col items-center p-4 ${
+      className={`mt-8 ml-8 flex flex-col items-center p-4 ${
         searchResults.length === 0 ? "bg-gray-200" : "bg-gray-100"
       } min-h-screen transition-colors duration-300`}
     >
@@ -59,7 +59,7 @@ function Search_Results() {
             <Link
               to={`/Watch?v=${result.id?.videoId}`}
               key={result.id?.videoId}
-              className="group block bg-white dark:bg-black rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg"
+              className="group w-42 block bg-white dark:bg-black rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg"
             >
               <img
                 src={result.snippet.thumbnails.medium.url}
@@ -67,10 +67,10 @@ function Search_Results() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-md md:text-lg font-semibold text-black dark:text-white truncate">
+                <h3 className="text-md md:text-lg font-semibold text-black dark:text-white ">
                   {result.snippet.title}
                 </h3>
-                <p className="text-sm text-black dark:text-white truncate">
+                <p className="text-sm text-black dark:text-white ">
                   {result.snippet.description}
                 </p>
               </div>
