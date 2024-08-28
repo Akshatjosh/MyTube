@@ -1,18 +1,19 @@
 import { useSelector } from "react-redux";
 
 function ButtonComponent({ name }) {
-  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode); // Access dark mode state
+  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode);
 
   return (
     <button
-      className={`ml-2 mt-4 px-6 py-2 rounded-lg font-semibold shadow-md transform transition-all duration-300 hover:scale-105 ${
+      className={`min-w-max px-4 py-2 sm:px-6 sm:py-3 rounded-full font-semibold shadow-lg transform transition-all duration-300 hover:scale-105 ${
         isDarkMode
-          ? "bg-gray-700 text-white hover:bg-gray-600"
-          : "bg-gray-200 text-black hover:bg-gray-300"
+          ? "bg-gradient-to-r from-gray-700 to-gray-900 text-white hover:from-gray-600 hover:to-gray-800"
+          : "bg-gradient-to-r from-gray-200 to-gray-400 text-black hover:from-gray-300 hover:to-gray-500"
       }`}
       style={{
-        whiteSpace: "nowrap", // Prevent text from wrapping
-        overflow: "hidden", // Hide any overflow
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
       }}
     >
       {name}

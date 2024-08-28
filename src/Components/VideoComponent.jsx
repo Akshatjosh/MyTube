@@ -3,7 +3,7 @@ import { VscAccount } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 
 function VideoComponent({ video }) {
-  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode); // Access dark mode state
+  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode);
 
   function getTimeAgo(date) {
     const seconds = Math.floor((new Date() - new Date(date)) / 1000);
@@ -31,47 +31,37 @@ function VideoComponent({ video }) {
 
   return (
     <div
-      className={`w-72 h-62 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl rounded-lg overflow-hidden shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-xl duration-300 ${
+      className={`w-full rounded-lg overflow-hidden shadow-md border transition-transform transform hover:scale-105 ${
         isDarkMode
-          ? "bg-black text-gray-100 border-gray-600"
-          : "bg-white text-gray-900"
+          ? "bg-gray-800 text-gray-100 border-gray-600"
+          : "bg-white text-gray-900 border-gray-300"
       }`}
     >
       <Link to={`/Watch?v=${video?.id}`}>
         <img
           src={video.snippet.thumbnails.high.url}
-          className="w-full h-80 object-cover"
+          className="w-full h-48 object-cover"
           alt={video.snippet.title}
         />
         <div className="p-4">
-          <h1 className="text-xl font-semibold truncate">
+          <h1 className="text-base font-semibold truncate">
             {video.snippet.title}
           </h1>
           <div className="flex items-center gap-2 mt-2">
-            <VscAccount
-              className={`text-gray-600 ${
-                isDarkMode ? "text-gray-400" : "text-gray-600"
-              }`}
-            />
+            <VscAccount className="text-gray-600" />
             <h3
-              className={`text-sm font-medium hover:underline ${
-                isDarkMode ? "text-gray-300" : "text-gray-900"
+              className={`text-sm font-medium ${
+                isDarkMode ? "text-gray-300" : "text-gray-800"
               }`}
             >
               {video.snippet.channelTitle}
             </h3>
           </div>
           <p className="mt-2 text-sm">
-            <span
-              className={`mr-4 ${isDarkMode ? "text-white" : "text-gray-900"}`}
-            >
+            <span className="mr-4">
               {formatViewCount(video.statistics.viewCount)} views
             </span>
-            <span
-              className={`ml-4 ${isDarkMode ? "text-white" : "text-black"}`}
-            >
-              {getTimeAgo(video.snippet.publishedAt)}
-            </span>
+            <span>{getTimeAgo(video.snippet.publishedAt)}</span>
           </p>
         </div>
       </Link>

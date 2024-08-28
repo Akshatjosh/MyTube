@@ -35,7 +35,7 @@ function WatchPage() {
           throw new Error("No video data found");
 
         setVideo(json.items[0]?.snippet || {});
-        setError(null); // Clear any previous errors
+        setError(null);
       } catch (error) {
         console.error("Error fetching video data:", error);
         setError(error.message);
@@ -57,9 +57,9 @@ function WatchPage() {
 
   return (
     <div
-      className={`flex flex-col lg:flex-row gap-8 p-4 mt-8 ${
+      className={`flex flex-col lg:flex-row gap-8 p-4 ${
         isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-100 text-gray-900"
-      }`}
+      } transition-colors duration-300`}
     >
       {/* Video Player */}
       <div
@@ -76,15 +76,14 @@ function WatchPage() {
             ) : (
               <>
                 <iframe
-                  className="w-full rounded-t-lg"
-                  height="450"
+                  className="w-full h-72 md:h-80 lg:h-96 rounded-t-lg" // Adjusted height for larger screens
                   src={`https://www.youtube.com/embed/${videoId}`}
                   title={video?.title || "YouTube video player"}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
                 <div className="p-4">
-                  <h1 className="text-2xl font-bold mb-2">{video?.title}</h1>
+                  <h1 className="text-xl font-bold mb-2">{video?.title}</h1>
                   <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
                     <div className="flex items-center gap-2">
                       <VscAccount className="text-xl" />
@@ -92,7 +91,7 @@ function WatchPage() {
                         {video?.channelTitle}
                       </h3>
                     </div>
-                    <div className="flex flex-col md:flex-row gap-2 md:gap-4 mt-4 md:mt-0">
+                    <div className="flex flex-wrap gap-2 md:gap-4 mt-4 md:mt-0">
                       <button
                         className={`px-4 py-2 font-medium rounded-full ${
                           subscribe
@@ -134,7 +133,7 @@ function WatchPage() {
       <div
         className={`rounded-lg border ${
           isDarkMode ? "border-gray-700 bg-black" : "border-gray-300 bg-white"
-        } shadow-lg w-1/3`}
+        } shadow-lg w-full lg:w-1/3`}
       >
         <LikedVideos />
       </div>

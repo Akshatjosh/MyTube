@@ -36,19 +36,19 @@ function Sidebar() {
             <nav className="flex flex-col gap-3 w-full">
               <Link
                 to="/"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaHome className="mr-3" /> Home
               </Link>
               <Link
                 to="/shorts"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaVideo className="mr-3" /> Shorts
               </Link>
               <Link
                 to="/subscriptions"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaStar className="mr-3" /> Subscriptions
               </Link>
@@ -60,37 +60,37 @@ function Sidebar() {
             <nav className="flex flex-col gap-3 w-full">
               <Link
                 to="/your-channel"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaPlayCircle className="mr-3" /> Your Channel
               </Link>
               <Link
                 to="/history"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaHistory className="mr-3" /> History
               </Link>
               <Link
                 to="/playlists"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaClock className="mr-3" /> Playlists
               </Link>
               <Link
                 to="/your-videos"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaVideo className="mr-3" /> Your Videos
               </Link>
               <Link
                 to="/watch-later"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaClock className="mr-3" /> Watch Later
               </Link>
               <Link
                 to="/liked-videos"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaThumbsUp className="mr-3" /> Liked Videos
               </Link>
@@ -102,67 +102,67 @@ function Sidebar() {
             <nav className="flex flex-col gap-3 w-full">
               <Link
                 to="/trending"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaGlobe className="mr-3" /> Trending
               </Link>
               <Link
                 to="/shopping"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaShoppingCart className="mr-3" /> Shopping
               </Link>
               <Link
                 to="/music"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaMusic className="mr-3" /> Music
               </Link>
               <Link
                 to="/films"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaFilm className="mr-3" /> Films
               </Link>
               <Link
                 to="/live"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaVideo className="mr-3" /> Live
               </Link>
               <Link
                 to="/gaming"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaGamepad className="mr-3" /> Gaming
               </Link>
               <Link
                 to="/news"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaNewspaper className="mr-3" /> News
               </Link>
               <Link
                 to="/sports"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaStar className="mr-3" /> Sports
               </Link>
               <Link
                 to="/courses"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaClock className="mr-3" /> Courses
               </Link>
               <Link
                 to="/fashion"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaTshirt className="mr-3" /> Fashion
               </Link>
               <Link
                 to="/podcasts"
-                className="flex items-center p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+                className="flex items-center p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 <FaPodcast className="mr-3" /> Podcasts
               </Link>

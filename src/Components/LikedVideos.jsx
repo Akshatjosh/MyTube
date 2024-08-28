@@ -7,22 +7,21 @@ function LikedVideos() {
 
   return (
     <div
-      className={`flex flex-col items-center p-4 ${
-        isDarkMode ? "bg-black text-gray-100" : "bg-gray-100 text-gray-900 "
+      className={`flex flex-col p-4 ${
+        isDarkMode ? "bg-black text-gray-100" : "bg-gray-100 text-gray-900"
       }`}
-      style={{ width: "100%" }} // Adjust width to take half of WatchPage's space
     >
-      <h1 className="text-3xl font-bold mb-6">Liked Videos</h1>
+      <h1 className="text-2xl font-bold mb-4">Liked Videos</h1>
       {likedVideos.length > 0 ? (
-        <div className="flex flex-col gap-6 w-full">
+        <div className="flex flex-col gap-4">
           {likedVideos.map((video, index) => (
             <Link to={`/Watch?v=${video.id}`} key={index} className="w-full">
               <div
-                className={`bg-white ${
+                className={`border rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 flex flex-col ${
                   isDarkMode
-                    ? "dark:bg-black border-gray-700"
-                    : "border-gray-200"
-                } border rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 flex flex-col`}
+                    ? "bg-gray-800 border-gray-700"
+                    : "bg-white border-gray-200"
+                }`}
               >
                 <img
                   src={video.thumbnails?.medium?.url}
@@ -43,7 +42,7 @@ function LikedVideos() {
           ))}
         </div>
       ) : (
-        <p className="text-xl font-semibold">No Liked Videos</p>
+        <p className="text-xl font-semibold text-center">No Liked Videos</p>
       )}
     </div>
   );

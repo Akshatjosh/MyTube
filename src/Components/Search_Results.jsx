@@ -13,7 +13,7 @@ function Search_Results() {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${searchQuery}&key=AIzaSyBxd27KF5gbH5bT7QD1dOlHWj5kTDA3ryo`
+          `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${searchQuery}&key=YOUR_API_KEY`
         );
         const data = await response.json();
         setSearchResults(data.items || []);
@@ -34,8 +34,16 @@ function Search_Results() {
   }, [searchQuery]);
 
   return (
-    <div className="p-4 bg-gray-100 dark:bg-black min-h-screen">
-      <h1 className="text-3xl font-extrabold mb-6 text-center text-gray-900 dark:text-gray-100">
+    <div
+      className={`flex flex-col items-center p-4 ${
+        searchResults.length === 0 ? "bg-gray-200" : "bg-gray-100"
+      } min-h-screen transition-colors duration-300`}
+    >
+      <h1
+        className={`text-2xl md:text-3xl font-extrabold mb-6 text-center ${
+          searchResults.length === 0 ? "text-gray-700" : "text-gray-900"
+        } dark:text-gray-100`}
+      >
         Search Results for{" "}
         <span className="text-red-600 dark:text-red-400">{searchQuery}</span>
       </h1>
@@ -46,12 +54,12 @@ function Search_Results() {
           </p>
         </div>
       ) : searchResults.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl">
           {searchResults.map((result) => (
             <Link
               to={`/Watch?v=${result.id?.videoId}`}
               key={result.id?.videoId}
-              className="group block bg-white dark:bg-black rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl"
+              className="group block bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg"
             >
               <img
                 src={result.snippet.thumbnails.medium.url}
@@ -59,7 +67,7 @@ function Search_Results() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 truncate">
+                <h3 className="text-md md:text-lg font-semibold text-gray-800 dark:text-gray-100 truncate">
                   {result.snippet.title}
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 truncate">
