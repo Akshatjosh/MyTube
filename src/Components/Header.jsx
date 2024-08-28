@@ -33,9 +33,11 @@ function Header() {
   }, [searchQuery]);
 
   const search = async () => {
-    const response = await fetch(suggestionApi + searchQuery);
-    const json = await response.json();
-    setSuggestions(json[1]);
+    if (searchQuery.trim()) {
+      const response = await fetch(suggestionApi + searchQuery);
+      const json = await response.json();
+      setSuggestions(json[1]);
+    }
   };
 
   const handleOpen = () => {
@@ -45,7 +47,7 @@ function Header() {
   const handleInputBlur = () => {
     setTimeout(() => {
       setShowSuggestion(false);
-    }, 200);
+    }, 300); // Increased timeout to ensure the user can interact with the suggestion list
   };
 
   const handleSearch = () => {
@@ -117,10 +119,11 @@ function Header() {
                 {suggestions.map((elem, index) => (
                   <li
                     key={index}
-                    className={`px-4 py-2 cursor-pointer hover:bg-gray-200 ${
+                    className={`px-4 py-2 cursor-pointer ${
                       isDarkMode ? "hover:bg-gray-700" : "hover:bg-gray-200"
                     }`}
                     onMouseDown={() => handleSuggestionClick(elem)}
+                    onTouchStart={() => handleSuggestionClick(elem)} // Ensure touch events are handled
                   >
                     🔍 {elem}
                   </li>

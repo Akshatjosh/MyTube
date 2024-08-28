@@ -7,17 +7,17 @@ function LikedVideos() {
 
   return (
     <div
-      className={`flex flex-col p-4 ${
+      className={`flex flex-col p-4  min-h-screen ml-8 ${
         isDarkMode ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
       <h1 className="text-2xl font-bold mb-4">Liked Videos</h1>
       {likedVideos.length > 0 ? (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 ">
           {likedVideos.map((video, index) => (
             <Link to={`/Watch?v=${video.id}`} key={index} className="w-full">
               <div
-                className={`border rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 flex flex-col ${
+                className={`border rounded-lg shadow-md  transform transition-transform duration-300 hover:scale-105 flex flex-col ${
                   isDarkMode
                     ? "bg-black border-gray-700"
                     : "bg-white border-gray-200"
@@ -26,7 +26,7 @@ function LikedVideos() {
                 <img
                   src={video.thumbnails?.medium?.url}
                   alt={video.title}
-                  className="w-full h-40 object-cover"
+                  className="w-full h-42 object-cover"
                 />
                 <div className="p-4">
                   <h3
